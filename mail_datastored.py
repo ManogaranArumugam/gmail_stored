@@ -47,12 +47,15 @@ def list_emails(service):
 list_emails(service)
 
 def maildatastored(email_id,subjectget,getfrommail):
+	
         try:
 	    mycursor = conn.cursor()
 	    # Insert the email ID into the database
             mycursor.execute("INSERT INTO emaildata (id,email_id,mail_subject,mail_from) VALUES (NULL,'"+email_id+"','"+subjectget+"','"+getfrommail+"')")
             conn.commit()
-	
+	    
+	except:
+        	print("exception")
 
 
 
